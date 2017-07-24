@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test task app</title>
+    </head>
+    <body>
+        <script>
+            ws = new WebSocket("ws://127.0.0.1:8080/ws"),
+            container = document.createElement('div');
+            ws.onmessage = function (event) {
+                container.innerHTML = event.data;
+            };
+            document.body.appendChild(container);
+        </script>
+    </body>
+</html>
